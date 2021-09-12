@@ -1,0 +1,55 @@
+/* Henry Lee */
+
+
+/* 9-6-2021 */
+
+body {
+    background-color: aqua;
+    /* body background */
+}
+
+h1 {
+    background-color: crimson;
+    /* header background */
+}
+
+h1.italics {
+    font-style: italic;
+    /* header 1 font */
+}
+
+h2.oblique {
+    font-style: oblique;
+    /* header 2 font */
+}
+
+p {
+    font-size: 20px;
+    /* paragraph font size */
+}
+
+.dropdown-menu {
+    background-color: gray;
+    /* dropdown menu color */
+}
+
+.order-button {
+    background-color: gray;
+    /* order button color */
+}
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown-select {
+    font-style: oblique;
+    font-weight: bold;
+    width: 50px;
+    background-color: #04AA6D;
+    display: inline-block;
+}

@@ -1,0 +1,91 @@
+<!--Henry Lee-->
+<!--9-6-2021-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--title header-->
+    <h1 class="italics">Cheesecake Order Form</h1>
+    <!--link to css file-->
+    <link rel="stylesheet" href="stylesheets/leeh24_cheesecake.css">
+
+</head>
+
+<body>
+    <!--image link-->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg" alt="cheesecake" width="400" height="400">
+
+    <br>
+    <div id="orderform">
+        <form>
+            <p>Quantity Topping</p>
+            <!--list of quantities numbers-->
+            <div style="display: inline-block;">
+                <select id="quantityOption" style="margin-top: 20px;">
+                        <option>3</option>
+                        <option>2</option>
+                        <option>1</option>
+                </select>
+
+                <!--radio button options-->
+                <div style="float: right;">
+                    <input type="radio" name="topping" value="Plain" checked> Plain<br>
+                    <input type="radio" name="topping" value="Cherry"> Cherry<br>
+                    <input type="radio" name="topping" value="Chocolate"> Chocolate
+                </div>
+            </div>
+
+            <!--text area for special instructions-->
+            <br><br>
+            <p>Notes: </p>
+            <textarea id="text" placeholder="Enter any special instructions here." cols="60" rows="6"></textarea>
+
+            <!--button to submit an order-->
+            <br><br>
+            <input id="button" class="order-button" type="submit" value="Order">
+
+
+        </form>
+
+    </div>
+
+    <br><br>
+
+    <!--dropdown menu-->
+    <div style="display: inline-block;">
+        <h2 class="oblique" style="display:inline">Orders From &nbsp;</h2>
+        <select id="dropdown" class="dropdown-select">
+        <option>Jan</option>
+        <option>Feb</option>
+        <option>Mar</option>
+        <option>Apr</option>
+        <option>May</option>
+        <option>Jun</option>
+        <option>Jul</option>
+        <option>Aug</option>
+        <option>Sep</option>
+        <option>Oct</option>
+        <option>Nov</option>
+        <option>Dec</option>
+    </select>
+    </div>
+
+    <!-- list of total orders in the previous month -->
+    <ul>
+        <li>11 Cherry</li>
+        <li>17 Chocolate</li>
+        <li>31 Plain</li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+
+    <script src="javascripts/leeh24_cheesecake.js">
+    </script>
+
+
+</body>
+
+
+</html>
