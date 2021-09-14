@@ -1,3 +1,5 @@
+//Henry Lee
+
 $(document).ready(function() {
     // event handler for button 
     $("#button").click(function() {
@@ -19,15 +21,15 @@ $(document).ready(function() {
 
     });
 
-dropdownHoverInHandler = function () {
+dropdownHoverInHandler = function () { // handler for dropdown button hover in function
     $(this).attr('size', 4);
 }
 
-dropdownHoverOutHandler = function() {
+dropdownHoverOutHandler = function() { // handler for dropdown button hover out function
     $(this).attr('size', 1);
 }
 
-dropdownClickHandler = function() {
+dropdownClickHandler = function() { // handler for dropdown button click handler
         var month = $('#dropdown option:selected').text();
 }
 
