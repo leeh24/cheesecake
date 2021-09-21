@@ -31,6 +31,25 @@ dropdownHoverOutHandler = function() { // handler for dropdown button hover out 
 
 dropdownClickHandler = function() { // handler for dropdown button click handler
         var month = $('#dropdown option:selected').text();
+
+        // construct url
+        var url = "/orders/" + month;
+
+        // post remote url to get orders by month
+        $.post(url, function (result){
+            // extract data from result and construct message to display
+            var data = result.data;
+            var msg = month + " orders: ";
+            for (var i=0; i < data.length; i++) {
+                msg = msg + data[i].QUANTITY + " " + data[i].TOPPING + "; ";
+            }
+
+            //show order details for month
+            $("#orders").html(msg);
+
+            //hide static order detail
+            $("ul").hide();
+        });
 }
 
     //add dropdown feature to menu
