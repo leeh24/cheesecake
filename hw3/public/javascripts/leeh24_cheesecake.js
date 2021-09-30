@@ -2,23 +2,30 @@
 
 $(document).ready(function() {
     // event handler for button 
-    $("#button").click(function() {
+    $("#orderButton").click(function() {
         var noteTxt = $("#text").val();
         if (noteTxt.includes("vegan")) {
             alert("Cheesecakes contain dairy");
-        } else {
-            // get value of topping and quantity
-            var topping = $('input[name="topping"]:checked').val();
-            var quantity = $("#quantityOption").val();
-
-            // printing order details
-            var orderDetails = "Thank you! Your order has been placed: " + " " + "Quantity: " + quantity + " " + "Topping: " + topping;
-
-            // replace form with order details
-            $("#orderform").replaceWith("<div>" + orderDetails + "</div>");
-
         }
 
+        // get value of topping and quantity
+        var topping = $('input[name="topping"]:checked').val();
+        var quantity = $("#quantityOption").val();
+
+        // printing order details
+        var orderDetails = "Thank you! Your order has been placed: " + " " + "Quantity: " + quantity + " " + "Topping: " + topping;
+
+        $.post("/neworder", { quantity: quantity, topping: topping, notes: noteTxt}, function (result) {
+            var data = result.message;
+
+            if (data!= "okay") {
+                orderDetails = "Fail to place order";
+            }
+
+             // replace form with order details
+            $("#orderform").replaceWith("<div>" + orderDetails + "</div>");
+
+        });
     });
 
 dropdownHoverInHandler = function () { // handler for dropdown button hover in function

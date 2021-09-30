@@ -3,31 +3,46 @@
 
 const orderService = require("../services/orders.service");
 
-const getAllOrders = async (req, res, next) => {
+const getAllOrders = async (request, response, next) => {
     console.log("controller: get orders ");
     try {
-        res.json(await orderService.getAllOrders());
+        response.json(await orderService.getAllOrders());
 
     } catch (e) {
         console.log(e.message);
-        res.sendStatus(500) && next(e);
+        response.sendStatus(500) && next(e);
     }
 }
 
-const getOrdersByMonth = async (req, res, next) => {
+const getOrdersByMonth = async (request, response, next) => {
     console.log("controller: get orders ");
     try {
-        res.json(await orderService.getOrdersByMonth(req.params.month));
+        response.json(await orderService.getOrdersByMonth(request.params.month));
 
-        //res.sendStatus(200)
-        //next()
     } catch (e) {
         console.log(e.message);
-        res.sendStatus(500) && next(e);
+        response.sendStatus(500) && next(e);
     }
 }
+
+const createNewOrder = async (request, response, next) => {
+    console.log("controller: create new order");
+    try {
+        let quantity = request.body.quantity;
+        let topping = request.body.topping;
+        let notes = request.body.notes;
+        console.log(quantity + topping + notes);
+        response.json(await orderService.createNewOrder(quantity, topping, notes));
+
+    } catch (e) {
+        console.log(e.message);
+        response.sendStatus(500) && next(e);
+    }
+}
+
 
 module.exports = {
     getAllOrders,
-    getOrdersByMonth
+    getOrdersByMonth,
+    createNewOrder
 }
